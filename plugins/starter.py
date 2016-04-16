@@ -21,7 +21,7 @@ p_bot_hi = re.compile("pybot[\s]*hi")
 p_bot_joke = re.compile("pybot[\s]*joke")
 p_bot_attach = re.compile("pybot[\s]*attachment")
 p_bot_help = re.compile("pybot[\s]*help")
-p_bot_help = re.compile("pybot[\s]*hoho")
+p_bot_hoho = re.compile("pybot[\s]*hoho")
 
 def process_message(data):
     logging.debug("process_message:data: {}".format(data))
@@ -41,7 +41,7 @@ def process_message(data):
     elif p_bot_help.match(data['text']):
         outputs.append([data['channel'], "{}".format(help_text)])
         
-    elif p_bot_help.match(data['text']):
+    elif p_bot_hoho.match(data['text']):
         outputs.append([data['channel'], "Is that you santa?"])
 
     elif data['text'].startswith("pybot"):
